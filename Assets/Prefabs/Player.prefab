@@ -4235,6 +4235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6202802994881296388}
   - component: {fileID: 4972369450465438614}
+  - component: {fileID: 4455475477748598316}
   - component: {fileID: 1690565575890796686}
   - component: {fileID: 4425568469839732160}
   - component: {fileID: 4163230324552695211}
@@ -4286,6 +4287,20 @@ MonoBehaviour:
   healthBar: {fileID: 1506575065837524250}
   gameOverCanvas: {fileID: 8903906408671158156}
   winCanvas: {fileID: 2351054617734138176}
+--- !u!114 &4455475477748598316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648530483833054881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24316cf210bcb846ac6de275d3960b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {x: 0, y: 0}
+  lookInput: {x: 0, y: 0}
 --- !u!114 &1690565575890796686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4303,7 +4318,7 @@ MonoBehaviour:
   playerBody: {fileID: 8473107655511945274}
   characterController: {fileID: 8399224818489655088}
   cameraController: {fileID: 4425568469839732160}
-  input: {x: 0, y: 0}
+  playerInput: {fileID: 4455475477748598316}
 --- !u!114 &4425568469839732160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4318,6 +4333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 1
   playerCameraParent: {fileID: 835984886771567496}
+  playerInput: {fileID: 4455475477748598316}
   xRotation: 0
   yRotation: 0
 --- !u!114 &4163230324552695211
@@ -4332,7 +4348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa113cdf389cfb4590b20f9fa02e01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1690565575890796686}
+  playerInput: {fileID: 4455475477748598316}
   animatorController: {fileID: 6691981895732302163}
 --- !u!114 &1732738985819521549
 MonoBehaviour:
@@ -4347,7 +4363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4481389415659723701}
-  playerController: {fileID: 1690565575890796686}
+  playerInput: {fileID: 4455475477748598316}
 --- !u!95 &6691981895732302163
 Animator:
   serializedVersion: 5

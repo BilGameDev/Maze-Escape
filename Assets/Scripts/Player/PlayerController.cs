@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform playerBody;
     [SerializeField] CharacterController characterController;
     [SerializeField] CameraController cameraController;
-    
-    [HideInInspector] public Vector2 input;
+    [SerializeField] PlayerInput playerInput;
+
 
     private Vector3 movement;
 
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         right.Normalize();
 
         // Calculate the movement vector
-        movement = input.x * right + input.y * forward;
+        movement = playerInput.input.x * right + playerInput.input.y * forward;
         movement *= moveSpeed;
 
         // Move the character
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     public void RotatePlayer()
     {
-        if (input.magnitude > 0)
+        if (playerInput.input.magnitude > 0)
             playerBody.rotation = Quaternion.Lerp(playerBody.rotation, Quaternion.Euler(0, cameraController.yRotation, 0), rotationSpeed * Time.deltaTime);
 
     }
@@ -54,10 +54,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        input.x = Input.GetAxis("Horizontal");
-        input.y = Input.GetAxis("Vertical");
-
         RotatePlayer();
     }
+
 }

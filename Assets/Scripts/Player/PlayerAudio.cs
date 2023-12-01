@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerAudio : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
-    [SerializeField] PlayerController playerController;
+    [SerializeField] PlayerInput playerInput;
 
     void Update()
     {
-        if(playerController.input.magnitude > 0)
+        if (playerInput.input.magnitude > 0)
             audioSource.enabled = true;
         else
             audioSource.enabled = false;

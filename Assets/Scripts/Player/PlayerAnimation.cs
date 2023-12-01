@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    [SerializeField] PlayerController playerController;
+    [SerializeField] PlayerInput playerInput;
     [SerializeField] Animator animatorController;
 
     void Update()
     {
-        animatorController.SetFloat("X", playerController.input.x);
-        animatorController.SetFloat("Y", playerController.input.y);
+        animatorController.SetFloat("X", playerInput.input.x);
+        animatorController.SetFloat("Y", playerInput.input.y);
     }
 }
