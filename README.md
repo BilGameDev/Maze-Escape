@@ -18,5 +18,7 @@ Enemies use NavMesh to pathfind back to their patrol routes when player focus is
 
 I tried to follow multiple design patterns and SOLID priciples.
 
+Try it here: https://bil-maze-escape.netlify.app
+
 
  
